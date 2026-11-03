@@ -1,0 +1,1 @@
+{"name":"pd-workshop-server","private":true,"type":"module","scripts":{"test":"node --test tests.mjs","test:integration":"node integration-test.mjs","bundle":"node scripts/bundle.mjs .."},"devDependencies":{"miniflare":"4.20260515.0"}}

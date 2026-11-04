@@ -13,13 +13,80 @@
 @media(max-width:1050px){.cardgrid{grid-template-columns:repeat(2,1fr)}.locals{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.shell{padding:0 14px 50px}.top-inner{padding:10px 14px}.brand{font-size:21px}.brand span{display:none}.top-actions .tiny{display:none}.hero{grid-template-columns:1fr;gap:16px;padding:27px 0 21px}h1{font-size:51px}.hero-note{padding:15px}.grid3{grid-template-columns:1fr;gap:9px}.metric{min-height:auto;padding:17px}.metric h2{font-size:31px;margin:4px 0 1px}.story{grid-template-columns:1fr}.cardgrid{grid-template-columns:1fr}.locals{grid-template-columns:1fr}.callouts{grid-template-columns:1fr}.section-title{margin-top:29px}.section-title h2{font-size:24px}.tools{gap:8px}.segmented{width:100%;justify-content:space-between}.segmented button{flex:1}.search{min-width:0;max-width:none;width:100%}.count-note{margin-left:0}.panel{padding:16px}}
 </style>
+
+<style id="command-center-style">
+.command-nav{position:sticky;top:0;z-index:30;background:#091326ef;border-bottom:1px solid #344761;backdrop-filter:blur(18px)}
+.command-nav .inner{max-width:1320px;margin:auto;padding:10px 25px;display:flex;gap:8px;overflow:auto;align-items:center}
+.command-nav a{font-weight:800;font-size:12px;border:1px solid #304760;border-radius:999px;white-space:nowrap;padding:8px 13px;color:#d7e8f9}
+.command-nav a:hover{background:#1a3452}
+.command-box{border:1px solid #374d67;background:linear-gradient(130deg,#132844,#0b192d);border-radius:20px;padding:24px;margin-top:26px;box-shadow:0 16px 55px #0003}
+.command-title{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+.command-title h2{font-size:30px;letter-spacing:-.04em;margin:3px 0 6px}
+.command-title p{color:#aebdd0;margin:0;max-width:770px}
+.tape-wrap{overflow:hidden;background:#071121;border-block:1px solid #37536b;padding:12px 0;margin:20px -24px 22px;position:relative}
+.tape{display:flex;gap:12px;width:max-content;animation:slideTape 68s linear infinite}
+.tape-wrap:hover .tape{animation-play-state:paused}
+.tape-entry{display:flex;align-items:center;gap:10px;padding:5px 16px;border-right:1px solid #2e4258;color:#e5f0ff;white-space:nowrap;font-size:12px}
+.tape-entry strong{color:#caee93}
+.tape-entry .side{color:#9eb2c9}
+@keyframes slideTape{to{transform:translateX(-50%)}}
+.command-filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}
+.command-filters button{background:#172a42;color:#d4e8ff;border:1px solid #3b5270;border-radius:9px;padding:9px 13px;font-weight:750}
+.command-filters button.active{background:#c9f288;color:#071626;border-color:#c9f288}
+.command-filters input{background:#0a1729;border:1px solid #3b5270;border-radius:9px;color:#fff;padding:10px;min-width:180px;flex:1}
+.watch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.watch-card{border:1px solid #2b415a;background:#0b1b30;border-radius:15px;padding:17px;cursor:pointer;text-align:left;color:inherit;display:block;width:100%}
+.watch-card:hover,.watch-card:focus-visible{border-color:#b7e3a0;background:#10243a}
+.watch-top,.watch-bottom{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.watch-top .watch-id{font-size:11px;font-weight:850;color:#9cbbdd;letter-spacing:.07em}
+.watch-top .watch-badge{font-size:10px;font-weight:850;border-radius:20px;padding:4px 8px;border:1px solid #415874;color:#bcd3e9}
+.watch-badge.counting{color:#c9f288;border-color:#668854}
+.watch-badge.called{color:#a8d1ff;border-color:#578bc1}
+.watch-card h3{font-size:19px;margin:10px 0 3px;letter-spacing:-.035em}
+.watch-card .watch-context{font-size:12px;color:#a6bcd3;margin:0 0 11px;min-height:28px}
+.watch-cands{margin:10px 0 13px}
+.watch-cand{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:5px 0;font-size:13px;border-bottom:1px solid #1f3248}
+.watch-cand .cand-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.watch-cand small{color:#8faac4;font-variant-numeric:tabular-nums}
+.watch-cand b{font-variant-numeric:tabular-nums}
+.watch-bar{height:7px;border-radius:999px;overflow:hidden;background:#273d53;display:flex;margin-top:10px}
+.watch-bar span{height:100%}
+.watch-bottom{font-size:11px;color:#95aec9;border-top:1px solid #263b53;padding-top:10px}
+.watch-bottom strong{color:#d6edfb}
+.watch-analysis{font-size:12px;color:#d2e2ef;line-height:1.55;margin:10px 0 0}
+.watch-analysis b{color:#c9f288}
+.source-signal{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:15px 0;color:#90aec8;font-size:11px}
+.live-signal{width:7px;height:7px;border-radius:50%;background:#ffbd6b;display:inline-block}
+.drawer-shade{position:fixed;inset:0;background:#000b;z-index:50;display:none}
+.drawer-shade.open{display:block}
+.drawer{position:absolute;right:0;top:0;bottom:0;width:min(560px,100%);background:#0c1c30;border-left:1px solid #46617b;padding:28px;overflow:auto;box-shadow:-20px 0 70px #0008}
+.drawer h2{font-size:31px;letter-spacing:-.055em;margin:12px 0}
+.drawer .drawer-close{float:right;border:1px solid #46617b;border-radius:8px;background:#19314e;color:#fff;padding:8px 12px}
+.drawer .detail-box{padding:15px;border-radius:12px;background:#132943;border:1px solid #2c4860;margin:14px 0}
+.drawer .detail-box h3{font-size:14px;color:#c9f288;text-transform:uppercase;letter-spacing:.09em;margin:0 0 8px}
+.drawer .detail-box p{color:#dae6f5;line-height:1.7;margin:5px 0}
+.drawer .desk-links{display:flex;flex-wrap:wrap;gap:9px}
+.drawer .desk-links a{font-size:12px;background:#1b3551;padding:8px 12px;border-radius:8px}
+#watchEmpty{padding:24px;color:#b9cade;text-align:center;display:none}
+@media(max-width:780px){.watch-grid{grid-template-columns:1fr}.command-box{padding:17px}.tape-wrap{margin:18px -17px}.command-title h2{font-size:25px}.command-nav .inner{padding:9px 14px}.drawer{padding:18px}}
+@media(prefers-reduced-motion:reduce){.tape{animation:none}}
+</style>
 </head>
 <body>
 <div class="topline"><div class="top-inner"><div class="brand">THE <b>CHECK</b><span>2026 ELECTION NIGHT</span></div><div class="top-actions"><span class="pill"><i id="statusDot" class="statusdot"></i><span id="feedStatus">Connecting to results…</span></span><span class="tiny" id="lastChecked">—</span><button id="refresh" class="btn accent" type="button">↻ Refresh</button></div></div></div>
-<main class="shell">
+<nav class="command-nav" aria-label="Election dashboard navigation"><div class="inner"><a href="#watchroom">⚡ LIVE RACE BOARD</a><a href="#senate">Senate</a><a href="#house">House</a><a href="#local">Washington</a><a href="#analysis">Analysis</a><a href="#sources">Sources</a></div></nav><main class="shell">
 <section class="hero"><div><div class="eyebrow">November 3, 2026 · Midterm watchroom</div><h1>The fight for<br><em>a check on power.</em></h1><p class="deck">Your progressive-minded election-night control room. Not a pep rally, not a prediction dressed up as a result: the races that matter most, the verified numbers we can reach, and what they actually change.</p></div><aside class="hero-note"><strong>What matters tonight</strong><p><b>A Democratic House</b> means committee gavels, subpoenas, oversight, and the ability to block legislation. <b>A Democratic Senate</b> also changes the confirmation process and committee leadership. Neither alone removes presidential veto authority.</p><small>Progressive perspective. Evidence-first reporting.</small></aside></section>
 <section class="grid3" aria-label="Balance of power"><article class="metric"><small>01 / House — control threshold</small><h2>218 <span class="smallnum">of 435 seats</span></h2><div class="secondary" id="houseMetric">High-leverage seats: gathering results</div><div class="mini-rule"></div><p>All seats are on the ballot. This dashboard watches competitive races, not every safe district.</p></article><article class="metric sen"><small>02 / Senate — majority threshold</small><h2>51 <span class="smallnum">of 100 seats</span></h2><div class="secondary" id="senMetric">Starting floor: 34 D-caucus · 31 R</div><div class="mini-rule"></div><p>Democrats need 17 of 35 contested seats to reach 51; the Republican vice president breaks a 50–50 tie.</p></article><article class="metric wa"><small>03 / Washington — polls close</small><h2>8:00 <span class="smallnum">PM Pacific</span></h2><div class="secondary" id="waMetric">Statewide races and measures not yet reported</div><div class="mini-rule"></div><p>Mail votes continue to be counted after election night. Early leads are not final outcomes.</p></article></section>
-<section class="story"><div class="panel"><div class="section-heading"><h3>✳ What the returns actually mean</h3><span class="sourcetag">Interpretation · not a projection</span></div><div id="analysis"><p class="analysis-line">Connecting to live counts. Democrats' first priority is flipping enough Republican-held House seats to take the gavel; the Senate demands a harder, multi-state path.</p></div><div class="analysis-list"><div class="analysis-item"><b>House:</b> Control unlocks oversight, hearings, subpoenas, budget leverage, and blocking new legislation. Not automatic repeal of existing executive actions.</div><div class="analysis-item"><b>Senate:</b> Control would bring committee leadership and confirmation leverage. The filibuster still constrains much ordinary legislation.</div><div class="analysis-item"><b>Counting:</b> First returns are not representative samples. Always examine vote-counting geography and ballot type before reading a swing.</div></div></div><div class="panel"><div class="section-heading"><h3>Poll-close clock</h3><span class="sourcetag">Pacific time</span></div><div id="clock" class="clock">—</div><div class="tiny" id="clockLine">Eastern results start rolling in at 3 PM Pacific.</div><div class="timeline"><div class="timeentry"><b>4 PM</b><span>GA, VA; NC/OH next</span></div><div class="timeentry"><b>5 PM</b><span>ME, PA, MI, TX</span></div><div class="timeentry"><b>6 PM</b><span>IA, MN, NY</span></div><div class="timeentry"><b>8 PM</b><span>Washington + West Coast</span></div></div><div class="mini-rule"></div><div class="tiny">Washington's first statewide release is expected at or after 8 p.m. PST. Local and federal results can take days.</div></div></section>
+<section class="story" id="analysis"><div class="panel"><div class="section-heading"><h3>✳ What the returns actually mean</h3><span class="sourcetag">Interpretation · not a projection</span></div><div id="analysis"><p class="analysis-line">Connecting to live counts. Democrats' first priority is flipping enough Republican-held House seats to take the gavel; the Senate demands a harder, multi-state path.</p></div><div class="analysis-list"><div class="analysis-item"><b>House:</b> Control unlocks oversight, hearings, subpoenas, budget leverage, and blocking new legislation. Not automatic repeal of existing executive actions.</div><div class="analysis-item"><b>Senate:</b> Control would bring committee leadership and confirmation leverage. The filibuster still constrains much ordinary legislation.</div><div class="analysis-item"><b>Counting:</b> First returns are not representative samples. Always examine vote-counting geography and ballot type before reading a swing.</div></div></div><div class="panel"><div class="section-heading"><h3>Poll-close clock</h3><span class="sourcetag">Pacific time</span></div><div id="clock" class="clock">—</div><div class="tiny" id="clockLine">Eastern results start rolling in at 3 PM Pacific.</div><div class="timeline"><div class="timeentry"><b>4 PM</b><span>GA, VA; NC/OH next</span></div><div class="timeentry"><b>5 PM</b><span>ME, PA, MI, TX</span></div><div class="timeentry"><b>6 PM</b><span>IA, MN, NY</span></div><div class="timeentry"><b>8 PM</b><span>Washington + West Coast</span></div></div><div class="mini-rule"></div><div class="tiny">Washington's first statewide release is expected at or after 8 p.m. PST. Local and federal results can take days.</div></div></section>
+
+<section id="watchroom" class="command-box" aria-label="Live individual race tracking">
+<div class="command-title"><div><div class="eyebrow">The count · individual races</div><h2>Election night race command center</h2><p>Every watched contest in one scrollable feed. Counts and declared calls are separate. Select any race for vote totals, source attribution, and a concise explanation of its stakes.</p></div><span class="pill" id="watchSummary">Loading race board…</span></div>
+<div class="tape-wrap" aria-label="Scrolling race ticker"><div class="tape" id="watchTicker"><span class="tape-entry">Checking election feeds…</span></div></div>
+<div class="command-filters" id="watchFilters"><button type="button" data-watch="all" class="active">All races</button><button type="button" data-watch="Senate">Senate</button><button type="button" data-watch="House">House</button><button type="button" data-watch="counting">Counting</button><button type="button" data-watch="called">Called</button><button type="button" data-watch="pickups">Party-held seats changing lead</button><input id="watchQuery" type="search" aria-label="Find a race" placeholder="Find state, seat, or candidate…"></div>
+<div class="source-signal"><span class="live-signal"></span><span id="watchFresh">Connecting to publicly accessible election feeds…</span><span>·</span><span>Click cards for an expanded race briefing</span></div>
+<div class="watch-grid" id="watchGrid"></div><div id="watchEmpty">No races match. Try a different filter.</div>
+</section>
+<div class="drawer-shade" id="raceDrawer" role="dialog" aria-modal="true" aria-label="Race detail"><div class="drawer"><button class="drawer-close" id="closeDrawer" type="button">✕ Close</button><div id="drawerBody"></div></div></div>
 <section id="senate" class="section-title"><div><div class="section-number">01 / THE SENATE</div><h2>The path to 51</h2><p>Six Cook toss-ups first; critical Democratic defenses and pickup opportunities next.</p></div><span class="pill" id="senStatus">12 priority races</span></section>
 <div id="senateGrid" class="cardgrid"></div>
 <section id="house" class="section-title"><div><div class="section-number">02 / THE HOUSE</div><h2>The road to 218</h2><p>Toss-ups, Republican-held openings, and must-protect Democratic seats. Watch for <b style="color:#d3ebff">net flips</b>, not just blue leads.</p></div><span class="pill" id="houseStatus">33 priority races</span></section>
@@ -28,7 +95,7 @@
 <section id="local" class="section-title"><div><div class="section-number">03 / BACK HOME</div><h2>Washington, under the microscope</h2><p>WA-03 is the national tipping-point story; statewide courts and initiatives shape rights and policy at home.</p></div><a class="btn" href="https://results.vote.wa.gov/" target="_blank" rel="noopener noreferrer">Official WA results ↗</a></section>
 <div class="locals" id="localGrid"></div>
 <div class="callouts"><div class="callout"><h4>Why the state Supreme Court matters</h4><p>Five of nine positions are up. Courts can determine how Washington law on rights, education, taxes and state powers is interpreted. These races are <b>nonpartisan on the ballot</b>; editorial coalitions and endorsements are not official party affiliations.</p></div><div class="callout"><h4>The three measures to watch</h4><p><b>IP26-645:</b> repeal the new tax on high earners. <b>IL26-638:</b> restrictions involving transgender girls in school sports. <b>IL26-001:</b> parental access to school records. The dashboard labels the policy consequence, not just Yes and No.</p></div></div>
-<section class="panel" style="margin-top:24px"><div class="section-heading"><h3>Source desk & integrity checks</h3><span id="dataFreshness" class="sourcetag">Checking sources</span></div><div id="sourceDetails" class="result-note">Live requests load once when you open this file and automatically retry every 60 seconds.</div><details><summary>How this works, and what it does not claim</summary><p>Federal vote counts: official state election-office results redistributed by <a href="https://openamerica.io/elections/api/" target="_blank" rel="noopener noreferrer">Open America</a> (22-state coverage) and, when accessible, <a href="https://thepeoplestally.com/open-data/" target="_blank" rel="noopener noreferrer">The People's Tally</a> (independent publicly available JSON from state feeds). Expected vote percentages are not identical to percent of precincts or counties reporting. We do not substitute one for the other.</p><p>Desk calls: The People's Tally's separately published result snapshots, only when they identify a decision desk and a winner. No candidate is treated as a called winner merely for leading. For all races, <a href="https://apnews.com/hub/election-2026" target="_blank" rel="noopener noreferrer">AP elections coverage</a> and <a href="https://www.electiontracker.live/results/" target="_blank" rel="noopener noreferrer">the race-call board</a> are direct cross-checks. Official certification comes later from states.</p><p>Washington Supreme Court contests and initiatives: link to the <a href="https://results.vote.wa.gov/" target="_blank" rel="noopener noreferrer">Secretary of State</a>. Because a verified browser-readable structured feed for those contests was not available, you can enter vote totals manually using Edit. Such entries are visibly labeled manual and stored only in this browser. They are never called automatically.</p><p>Updates stop while this tab is closed; this is a browser dashboard, not a notification service. Cross-origin restrictions or provider outages can prevent live loading: the app will show that rather than manufacturing results. Data checked timestamp is the browser-request time; the count timestamp is separately identified when supplied by a source.</p></details></section>
+<section class="panel" id="sources" style="margin-top:24px"><div class="section-heading"><h3>Source desk & integrity checks</h3><span id="dataFreshness" class="sourcetag">Checking sources</span></div><div id="sourceDetails" class="result-note">Live requests load once when you open this file and automatically retry every 60 seconds.</div><details><summary>How this works, and what it does not claim</summary><p>Federal vote counts: official state election-office results redistributed by <a href="https://openamerica.io/elections/api/" target="_blank" rel="noopener noreferrer">Open America</a> (22-state coverage) and, when accessible, <a href="https://thepeoplestally.com/open-data/" target="_blank" rel="noopener noreferrer">The People's Tally</a> (independent publicly available JSON from state feeds). Expected vote percentages are not identical to percent of precincts or counties reporting. We do not substitute one for the other.</p><p>Desk calls: The People's Tally's separately published result snapshots, only when they identify a decision desk and a winner. No candidate is treated as a called winner merely for leading. For all races, <a href="https://apnews.com/hub/election-2026" target="_blank" rel="noopener noreferrer">AP elections coverage</a> and <a href="https://www.electiontracker.live/results/" target="_blank" rel="noopener noreferrer">the race-call board</a> are direct cross-checks. Official certification comes later from states.</p><p>Washington Supreme Court contests and initiatives: link to the <a href="https://results.vote.wa.gov/" target="_blank" rel="noopener noreferrer">Secretary of State</a>. Because a verified browser-readable structured feed for those contests was not available, you can enter vote totals manually using Edit. Such entries are visibly labeled manual and stored only in this browser. They are never called automatically.</p><p>Updates stop while this tab is closed; this is a browser dashboard, not a notification service. Cross-origin restrictions or provider outages can prevent live loading: the app will show that rather than manufacturing results. Data checked timestamp is the browser-request time; the count timestamp is separately identified when supplied by a source.</p></details></section>
 <footer class="bottom"><div><b>THE CHECK / ELECTION NIGHT '26</b><div>Built for watching the balance of power, not for pretending uncertainty away.</div></div><div>Ratings: <a href="https://www.cookpolitical.com/ratings/senate-race-ratings" target="_blank">Cook Senate</a> · <a href="https://www.cookpolitical.com/ratings/house-race-ratings" target="_blank">Cook House</a> · <a href="https://www.sos.wa.gov/elections/" target="_blank">WA elections</a> · <a href="https://civicapi.org/" target="_blank">civicAPI</a></div></footer>
 </main>
 <div class="modalback hidden" id="modalback" role="dialog" aria-modal="true"><form class="modal" id="manualForm"><h3 id="modalTitle">Add local returns</h3><p>Copy the unofficial candidate/Yes and No totals from the Washington Secretary of State. These values are <b>not</b> automatically verified or treated as calls.</p><label for="entryA" id="entryALabel">First option</label><input type="number" min="0" step="1" id="entryA"><label for="entryB" id="entryBLabel">Second option</label><input type="number" min="0" step="1" id="entryB"><div class="modalbuttons"><button type="button" class="btn" id="clearManual">Clear saved</button><button type="button" class="btn" id="cancelManual">Cancel</button><button type="submit" class="btn accent">Save totals</button></div></form></div>
@@ -143,5 +210,110 @@ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click'
 $('localGrid').addEventListener('click',e=>{const edit=e.target.closest('[data-edit]');if(edit){const item=local.find(x=>x[0]===edit.dataset.edit);if(!item)return;state.editing=item;$('modalTitle').textContent=item[1];$('entryALabel').textContent=item[4][0];$('entryBLabel').textContent=item[4][1];$('entryA').value=state.manual[item[0]]?.a??'';$('entryB').value=state.manual[item[0]]?.b??'';$('modalback').classList.remove('hidden');$('entryA').focus();}const jump=e.target.closest('[data-jump]');if(jump){state.filter='wa';document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x.dataset.filter==='wa'));state.query='';$('search').value='';renderHouse();}});
 function hideModal(){$('modalback').classList.add('hidden');state.editing=null;}$('cancelManual').addEventListener('click',hideModal);$('modalback').addEventListener('click',e=>{if(e.target.id==='modalback')hideModal()});$('manualForm').addEventListener('submit',e=>{e.preventDefault();if(!state.editing)return;const a=$('entryA').value,b=$('entryB').value;if(a===''||b==='')return;state.manual[state.editing[0]]={a:Math.max(0,Number(a)),b:Math.max(0,Number(b)),saved:new Date().toISOString()};try{localStorage.setItem('the-check-wa-manual-v1',JSON.stringify(state.manual))}catch(e){}hideModal();renderLocal()});$('clearManual').addEventListener('click',()=>{if(state.editing){delete state.manual[state.editing[0]];try{localStorage.setItem('the-check-wa-manual-v1',JSON.stringify(state.manual))}catch(e){}}hideModal();renderLocal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')hideModal()});
 updateClock();setInterval(updateClock,1000);renderAll();refresh();setInterval(()=>{if(document.visibilityState==='visible')refresh()},60000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible' && state.checked && Date.now()-new Date(state.checked).getTime()>60000)refresh()});
+</script>
+
+<script id="command-center-script">
+(function(){
+'use strict';
+const panel=document.getElementById('watchGrid');
+const watch={mode:'all',q:'',records:[],lastFingerprint:'',movement:{}};
+const safe=s=>esc(s);
+const prio=s=>s.priority||s[7]||3;
+const entries=()=>[
+...senate.map(x=>({id:x[0],title:x[1],office:'Senate',holder:x[3],rating:x[2],priority:x[7],context:x[6],lineup:x[4]+' (D) · '+x[5]+' (R)',cfg:x})),
+...house.map(x=>({id:x.id,title:x.id,office:'House',holder:x.holder,rating:x.rating,priority:x.priority,context:x.why,lineup:null,cfg:x}))
+];
+function normalized(x){const d=raceData(x.id,x.office);const c=(d.raw?.candidates||[]).filter(c=>c&&(+c.votes>0||c.party==='D'||c.party==='R')).sort((a,b)=>(+b.votes||0)-(+a.votes||0));
+const total=c.reduce((s,z)=>s+(+z.votes||0),0);
+const dVotes=c.filter(z=>z.party==='D').reduce((s,z)=>s+(+z.votes||0),0);
+const rVotes=c.filter(z=>z.party==='R').reduce((s,z)=>s+(+z.votes||0),0);
+const leader=c[0],runner=c[1];
+const margin=leader&&runner?(+leader.votes||0)-(+runner.votes||0):null;
+const status=d.call?'called':total>0?'counting':'waiting';
+return {...x,d,c,total,dVotes,rVotes,leader,runner,margin,status};
+}
+const short=n=>Number(n||0).toLocaleString('en-US');
+const percentage=(n,d)=>d>0?(100*n/d).toFixed(1)+'%':'—';
+function contextLine(r){
+if(r.status==='waiting')return 'No independently verified vote totals yet. A pre-election rating is not a result.';
+if(r.status==='called')return 'Projected winner reported by '+r.d.call.by+'. Certification remains separate.';
+const party=r.leader?.party||'';
+let s='Currently ahead: '+(r.leader?.name||'unknown')+' ('+party+')';
+if(r.margin!==null)s+=' by '+short(r.margin)+' votes ('+percentage(r.margin,r.total)+' of counted votes)';
+s+='. This is a lead, not a race call.';
+return s;
+}
+function implications(r){
+const noun=r.office==='Senate'?'Senate seat':'House district';
+if(r.status==='waiting')return 'This '+noun+' is '+(r.holder==='R'?'Republican-held':'Democratic-held')+'. Watch reported vote totals, reporting geography and any attributed call; neither a rating nor a poll constitutes an election-night projection.';
+const winner=r.d.call?.party||r.leader?.party;
+const flipped=winner&&winner!=='I'&&winner!==r.holder;
+let line=flipped? 'The currently '+(r.status==='called'?'called':'leading')+' party differs from the party holding the seat before this election. ' : 'The currently '+(r.status==='called'?'called':'leading')+' party matches the seat’s pre-election holder. ';
+line+=r.status==='called'?'This result counts toward the change in partisan seats once confirmed by the reporting decision desk. ':'This is not yet a confirmed pickup or hold. ';
+if(r.office==='House')line+='House control requires 218 seats nationally. A change in this district affects the partisan balance, but this watched-races subset cannot establish the full House outcome.';
+else line+='The Senate majority threshold is 51 seats because a 50–50 tie is broken by the Republican vice president. This is one of 35 contests, not an independent determination of Senate control.';
+return line;
+}
+function raceSummary(r){return contextLine(r)+' '+implications(r)}
+function colors(p){return p==='D'?'#68aeff':p==='R'?'#ff777b':'#c5c8d2'}
+function card(r){
+const candidates=r.c.length?r.c.slice(0,3).map(c=>'<div class="watch-cand"><span class="cand-name"><b style="color:'+colors(c.party)+'">●</b> '+safe(c.name)+'</span><b>'+percentage(+c.votes||0,r.total)+'</b><small>'+short(c.votes)+'</small></div>').join(''):'<div style="color:#a1b8d0;font-size:12px;min-height:35px">'+safe(r.lineup||'Candidate vote totals pending from the sources.')+'</div>';
+const bar=r.total?'<div class="watch-bar"><span style="width:'+100*r.dVotes/r.total+'%;background:#68aeff"></span><span style="width:'+100*r.rVotes/r.total+'%;background:#ff777b"></span><span style="width:'+100*Math.max(0,r.total-r.dVotes-r.rVotes)/r.total+'%;background:#bac3d4"></span></div>':'';
+const stamp=r.d.asOf?'Source: '+safe(when(r.d.asOf)):'No source timestamp';
+const label=r.status==='called'?'PROJECTED WINNER':r.status==='counting'?'COUNTING · NOT CALLED':'AWAITING COUNT';
+return '<button type="button" class="watch-card" data-race="'+safe(r.id)+'" aria-label="Open '+safe(r.title)+' race details"><div class="watch-top"><span class="watch-id">'+safe(r.office.toUpperCase()+' · '+r.id)+'</span><span class="watch-badge '+r.status+'">'+label+'</span></div><h3>'+safe(r.title)+'</h3><p class="watch-context">'+safe(r.context)+'</p><div class="watch-cands">'+candidates+bar+'</div><div class="watch-bottom"><span>'+(r.total?short(r.total)+' counted votes':'Votes pending')+'</span><strong>'+ (r.margin!==null?'Margin '+short(r.margin):'—')+'</strong><span>'+stamp+'</span></div><p class="watch-analysis">'+safe(contextLine(r))+'</p></button>';
+}
+function tally(){
+const arr=entries().map(normalized);
+const rank={called:0,counting:1,waiting:2};
+arr.sort((a,b)=>prio(a)-prio(b)||rank[a.status]-rank[b.status]||a.id.localeCompare(b.id));
+return arr;
+}
+function renderTape(a){
+const interesting=[...a].sort((x,y)=>({called:0,counting:1,waiting:2}[x.status]-{called:0,counting:1,waiting:2}[y.status])||prio(x)-prio(y)).slice(0,32);
+const one=interesting.map(x=>'<span class="tape-entry"><strong>'+safe(x.id)+'</strong><span>'+safe(x.status==='called'?'CALLED '+(x.d.call?.party||''):x.status==='counting'?(x.leader?.party||'—')+' ahead '+percentage(x.margin,x.total):'awaiting count')+'</span><span class="side">'+safe(x.status==='called'?(x.d.call?.by||'source pending'):x.status==='counting'?short(x.total)+' votes':'—')+'</span></span>').join('');
+const ticker=document.getElementById('watchTicker');
+ticker.innerHTML=one+one;
+}
+function render(){
+const a=tally();watch.records=a;
+let visible=a.filter(r=>{
+if(watch.mode==='Senate'||watch.mode==='House')return r.office===watch.mode;
+if(watch.mode==='counting')return r.status==='counting';
+if(watch.mode==='called')return r.status==='called';
+if(watch.mode==='pickups')return r.status!=='waiting'&&r.holder!==(r.d.call?.party||r.leader?.party);
+return true;
+});
+if(watch.q)visible=visible.filter(r=>(r.id+' '+r.title+' '+r.context+' '+r.lineup+' '+r.c.map(c=>c.name).join(' ')).toLowerCase().includes(watch.q));
+panel.innerHTML=visible.map(card).join('');
+document.getElementById('watchEmpty').style.display=visible.length?'none':'block';
+const counting=a.filter(r=>r.status==='counting').length,called=a.filter(r=>r.status==='called').length;
+document.getElementById('watchSummary').textContent=a.length+' featured races · '+counting+' counting · '+called+' projected';
+document.getElementById('watchFresh').textContent=state.sourceOK.length?state.sourceOK.length+' accessible feed(s) checked '+when(state.checked)+'. Source timestamps vary.':'No live counts feed confirmed. Last attempted '+(state.checked?when(state.checked):'not yet')+'.';
+renderTape(a);
+}
+function detail(id){
+const r=watch.records.find(x=>x.id===id);if(!r)return;
+const status=r.status==='called'?'Called for '+r.d.call.name+' by '+r.d.call.by:r.status==='counting'?'Counting · '+r.leader.name+' currently ahead':'No verified live count';
+const rows=r.c.length?r.c.map(c=>'<div class="watch-cand"><span>'+safe(c.name)+' ('+safe(c.party)+')</span><b>'+percentage(c.votes,r.total)+'</b><small>'+short(c.votes)+' votes</small></div>').join(''):'No counts are available through the connected public feeds. '+safe(r.lineup||'');
+const query=encodeURIComponent('2026 '+r.id+' election results');
+const links=[['Associated Press','https://apnews.com/hub/election-2026'],['CNN results','https://www.cnn.com/election/2026'],['New York Times','https://www.nytimes.com/interactive/2026/11/03/us/elections/results.html'],['Official state election offices','https://thepeoplestally.com/data/core.json'],['Search reporting','https://www.google.com/search?q='+query]];
+const body='<div class="eyebrow">Race intelligence / '+safe(r.office)+'</div><h2>'+safe(r.title)+' <small style="font-size:14px;color:#99b4ce">'+safe(r.id)+'</small></h2><p style="color:#aec5da">'+safe(r.rating)+' · previously '+(r.holder==='R'?'Republican':'Democratic')+'-held</p><div class="detail-box"><h3>Current status</h3><p><b>'+safe(status)+'</b></p><p>'+safe(r.total?short(r.total)+' votes currently counted':'Votes not yet available')+'</p>'+rows+'</div><div class="detail-box"><h3>Reading this count</h3><p>'+safe(raceSummary(r))+'</p>'+(r.total?'<p>The gap between the two highest vote getters is '+short(r.margin||0)+' votes. Reporting precincts, vote methods, and outstanding ballots can change the lead.</p>':'')+'</div><div class="detail-box"><h3>Why this race is on the board</h3><p>'+safe(r.context)+'</p><p>Pre-election competitiveness label: '+safe(r.rating)+'. This label is not an election result.</p></div><div class="detail-box"><h3>Source / verification</h3><p>Vote totals: '+safe(r.d.source||'Not yet available from public feeds')+'. '+safe(r.d.asOf?'Reported '+when(r.d.asOf):'No source count timestamp.')+'</p><p>Projection: '+safe(r.d.call? r.d.call.by+' · '+(r.d.call.time?when(r.d.call.time):'call time unknown'):'No attributed desk call in this dashboard.')+'</p><p>AP, CNN and the New York Times can publish their own projections. This page does not claim to syndicate their licensed feeds.</p><div class="desk-links">'+links.map(z=>'<a href="'+safe(z[1])+'" target="_blank" rel="noopener noreferrer">'+safe(z[0])+' ↗</a>').join('')+'</div></div>';
+document.getElementById('drawerBody').innerHTML=body;
+document.getElementById('raceDrawer').classList.add('open');
+document.body.style.overflow='hidden';
+document.getElementById('closeDrawer').focus();
+}
+function close(){document.getElementById('raceDrawer').classList.remove('open');document.body.style.overflow='';}
+panel.addEventListener('click',e=>{const card=e.target.closest('[data-race]');if(card)detail(card.dataset.race)});
+document.getElementById('closeDrawer').addEventListener('click',close);
+document.getElementById('raceDrawer').addEventListener('click',e=>{if(e.target.id==='raceDrawer')close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+document.getElementById('watchFilters').addEventListener('click',e=>{const b=e.target.closest('[data-watch]');if(!b)return;watch.mode=b.dataset.watch;document.querySelectorAll('[data-watch]').forEach(x=>x.classList.toggle('active',x===b));render()});
+document.getElementById('watchQuery').addEventListener('input',e=>{watch.q=e.target.value.toLowerCase().trim();render()});
+const previousRender=renderAll;
+renderAll=function(){previousRender();render()};
+render();
+})();
 </script>
 </body></html>
